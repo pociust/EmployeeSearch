@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "SpongeBob",
+    "occupation": "Fry Cook"
+  },
+  {
+    "id": 2,
+    "name": "Mr. Krabs",
+    "occupation": "Restaurant Owner"
+  },
+  {
+    "id": 3,
+    "name": "Squidward",
+    "occupation": "Cashier"
+  },
+  {
+    "id": 4,
+    "name": "Dexter",
+    "occupation": "Boy Genius"
+  },
+  {
+    "id": 5,
+    "name": "Courage",
+    "occupation": "A Cowardly Dog"
+  },
+  {
+    "id": 6,
+    "name": "Doug Funnie",
+    "occupation": "Student"
+  },
+  {
+    "id": 7,
+    "name": "Bugs Bunny",
+    "occupation": "Looney Toon"
+  },
+  {
+    "id": 8,
+    "name": "Johnny Bravo",
+    "occupation": "Ladies Man"
+  },
+  {
+    "id": 9,
+    "name": "Tommy Pickles",
+    "occupation": "Adventurer"
+  },
+  {
+    "id": 10,
+    "name": "Rocko",
+    "occupation": "Cashier"
+  },
+  {
+    "id": 11,
+    "name": "Captain Planet",
+    "occupation": "Superhero"
+  },
+  {
+    "id": 12,
+    "name": "Ickis",
+    "occupation": "Ahhhh! A Real Monster!"
+  }
+]

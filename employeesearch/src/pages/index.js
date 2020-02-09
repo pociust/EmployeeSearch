@@ -1,28 +1,30 @@
-import React from 'react';
-import '../Styles/friends.css';
+import React, { useState } from 'react';
+import employeeslist from '../EmployeeList.json'
+import Card from './../components/Card'
 
-function FriendCard(props) {
+
+
+const EmployeeList = () => {
+  const [employees, setEmployees] = useState(employeeslist); 
+
   return (
-    <div className="card">
-      <div className="img-container">
-        <img alt={props.name} src={props.image} />
-      </div>
-      <div className="content">
-        <ul>
-          <li>
-            <strong>Name:</strong> {props.name}
-          </li>
-          <li>
-            <strong>Occupation:</strong> {props.occupation}
-          </li>
-          <li>
-            <strong>Address:</strong> {props.location}
-          </li>
-        </ul>
-      </div>
-      <span className="remove" onClick={() => props.removeFriend(props.id)}>𝘅</span>
+    <div>
+      {employees.map(employee => (
+        <Card name = {employee.name}/>
+      ))} 
     </div>
   );
+
+
+
+
+
+
+
+
+
 }
 
-export default FriendCard;
+
+
+export default EmployeeList;

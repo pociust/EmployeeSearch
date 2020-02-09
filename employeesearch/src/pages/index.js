@@ -1,30 +1,18 @@
 import React, { useState } from 'react';
-import employeeslist from '../EmployeeList.json'
-import Card from './../components/Card'
+import Card from './../components/Card';
+import Form from './../components/Form'
 
-
-
-const EmployeeList = () => {
-  const [employees, setEmployees] = useState(employeeslist); 
+const EmployeeList = ({ initialList }) => {
+  const [employees, setEmployees] = useState(initialList || []);
 
   return (
     <div>
+      <Form></Form>
       {employees.map(employee => (
-        <Card name = {employee.name}/>
-      ))} 
+        <Card name={employee.name} occupation={employee.occupation} />
+      ))}
     </div>
   );
-
-
-
-
-
-
-
-
-
-}
-
-
+};
 
 export default EmployeeList;

@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-function Form () {
+function Form (props) {
   return (
-    <form>
+    <form onSubmit = {props.onSubmit}>
       <input type="text" placeholder="Name" name="employeeName">
         
       </input>

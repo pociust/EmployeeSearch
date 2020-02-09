@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
 import Card from './../components/Card';
-import Form from './../components/Form'
+import Form from './../components/Form';
 
 const EmployeeList = ({ initialList }) => {
   const [employees, setEmployees] = useState(initialList || []);
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log('tom');
+  };
+
   return (
     <div>
-      <Form></Form>
+      <Form onSubmit={handleSubmit}></Form>
       {employees.map(employee => (
-        <Card name={employee.name} occupation={employee.occupation} />
+        <Card
+          key={employee.id}
+          name={employee.name}
+          occupation={employee.occupation}
+        />
       ))}
     </div>
   );

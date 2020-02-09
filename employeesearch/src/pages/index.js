@@ -10,9 +10,13 @@ const EmployeeList = ({ initialList }) => {
     console.log('tom');
   };
 
+  const searchEmployee = () => {
+    console.log("checkemployee")
+  }
+
   return (
     <div>
-      <Form onSubmit={handleSubmit}></Form>
+      <Form onSubmit={handleSubmit} onChange={searchEmployee}></Form>
       {employees.map(employee => (
         <Card
           key={employee.id}

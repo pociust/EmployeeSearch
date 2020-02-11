@@ -7,7 +7,10 @@ function Card(props) {
         <strong>Name:</strong> {props.name}
       </li>
       <li>
-        <strong>Occupation:</strong> {props.occupation}
+        <strong>Salary:</strong> ${props.salary}
+      </li>
+      <li>
+        <strong>Age:</strong> {props.age}
       </li>
     </ul>
     /* <span className="remove" onClick={() => props.removeFriend(props.id)}>𝘅</span> */

@@ -6,7 +6,7 @@ const EmployeeList = ({ initialList }) => {
   const [employees, setEmployees] = useState(initialList || []);
   const [searchedQuery, setQuery] = useState('');
   const filteredEmployees = employees.filter(
-    employee => employee.name.indexOf(searchedQuery) !== -1
+    employee => employee.name.toLowerCase().indexOf(searchedQuery.toLowerCase()) !== -1
   );
 
   const handleSubmit = event => {
@@ -30,10 +30,10 @@ const EmployeeList = ({ initialList }) => {
         <Card
           key={employee.id}
           name={employee.name}
-          occupation={employee.occupation}
+          salary={employee.salary}
+          age={employee.age}
         />
       ))}
-      <Card></Card>
     </div>
   );
 };

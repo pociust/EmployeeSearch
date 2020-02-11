@@ -23,7 +23,9 @@ const EmployeeList = ({ initialList }) => {
 
   return (
     <div>
-      <Form onSubmit={handleSubmit} onChange={searchEmployee}></Form>
+      <div className="frow">
+        <Form onSubmit={handleSubmit} onChange={searchEmployee}></Form>
+      </div>
       {filteredEmployees.map(employee => (
         <Card
           key={employee.id}

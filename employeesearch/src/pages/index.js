@@ -8,6 +8,8 @@ const EmployeeList = ({ initialList }) => {
   const [searchedQueryAge, setQueryAge] = useState('');
   const [searchQuerySalary, setQuerySalary] = useState('');
 
+
+
   // const filteredEmployeesByName = employees.filter(
   //   employee =>
   //     employee.name.toLowerCase().indexOf(searchedQueryName.toLowerCase()) !==
@@ -17,10 +19,13 @@ const EmployeeList = ({ initialList }) => {
   // const filteredEmployeesByAge = employees.filter(
   //   employee => employee.age >= searchedQueryAge
   // );
-
-  const filteredEmployeesBySalary = employees.filter(
-    employee => parseFloat(employee.salary) <= parseFloat(searchQuerySalary)
-  );
+  if (searchQuerySalary !== ""){
+    var filteredEmployeesBySalary = employees.filter(
+      employee => parseFloat(employee.salary) <= parseFloat(searchQuerySalary)
+    );
+  } else {
+    filteredEmployeesBySalary = employees
+  }
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -37,6 +42,7 @@ const EmployeeList = ({ initialList }) => {
   };
 
   const searchSalary = event => {
+    console.log(parseFloat(event.target.value))
     setQuerySalary(event.target.value);
   };
 

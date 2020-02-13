@@ -4,32 +4,53 @@ import Form from './../components/Form';
 
 const EmployeeList = ({ initialList }) => {
   const [employees, setEmployees] = useState(initialList || []);
-  const [searchedQuery, setQuery] = useState('');
-  const filteredEmployees = employees.filter(
-    employee =>
-      employee.name.toLowerCase().indexOf(searchedQuery.toLowerCase()) !== -1
+  const [searchedQueryName, setQueryName] = useState('');
+  const [searchedQueryAge, setQueryAge] = useState('');
+  const [searchQuerySalary, setQuerySalary] = useState('');
+
+  // const filteredEmployeesByName = employees.filter(
+  //   employee =>
+  //     employee.name.toLowerCase().indexOf(searchedQueryName.toLowerCase()) !==
+  //     -1
+  // );
+
+  // const filteredEmployeesByAge = employees.filter(
+  //   employee => employee.age >= searchedQueryAge
+  // );
+
+  const filteredEmployeesBySalary = employees.filter(
+    employee => parseFloat(employee.salary) <= parseFloat(searchQuerySalary)
   );
 
   const handleSubmit = event => {
     event.preventDefault();
 
-    setQuery(event.target.employeeName.value);
+    setQueryName(event.target.employeeName.value);
   };
 
-  const searchEmployee = event => {
-    setQuery(event.target.value);
+  const searchEmployeeName = event => {
+    setQueryName(event.target.value);
   };
 
-  const searchAge = () => {
-    console.log('tom')
+  const searchAge = event => {
+    setQueryAge(event.target.value);
+  };
+
+  const searchSalary = event => {
+    setQuerySalary(event.target.value);
   };
 
   return (
     <div>
       <div className="frow">
-        <Form onSubmit={handleSubmit} onChangeName={searchEmployee} onChangeAge={searchAge}></Form>
+        <Form
+          onSubmit={handleSubmit}
+          onChangeName={searchEmployeeName}
+          onChangeAge={searchAge}
+          onChangeSalary={searchSalary}
+        ></Form>
       </div>
-      {filteredEmployees.map(employee => (
+      {filteredEmployeesBySalary.map(employee => (
         <Card
           key={employee.id}
           name={employee.name}

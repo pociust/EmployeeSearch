@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Card from './../components/Card';
 import Form from './../components/Form';
+import SortCard from './../components/SortCard';
 
 const EmployeeList = ({ initialList }) => {
   const [employees, setEmployees] = useState(initialList || []);
@@ -8,11 +9,12 @@ const EmployeeList = ({ initialList }) => {
   const [searchedQueryAge, setQueryAge] = useState('');
   const [searchQuerySalary, setQuerySalary] = useState('');
 
-  // const filteredEmployeesByName = employees.filter(
-  //   employee =>
-  //     employee.name.toLowerCase().indexOf(searchedQueryName.toLowerCase()) !==
-  //     -1
-  // );
+  const filteredEmployeesByName = employees.filter(
+    employee =>
+      employee.name.toLowerCase().indexOf(searchedQueryName.toLowerCase()) !==
+      -1
+  );
+
   if (searchedQueryAge !== '') {
     var filteredEmployeesByAge = employees.filter(
       employee => employee.age >= searchedQueryAge
@@ -47,6 +49,11 @@ const EmployeeList = ({ initialList }) => {
     setQuerySalary(event.target.value);
   };
 
+  const sortEmployeeList = () => {
+    console.log('hello');
+    // filteredEmployeesByName.sort(employees.name);
+  };
+
   return (
     <div>
       <div className="frow">
@@ -56,8 +63,9 @@ const EmployeeList = ({ initialList }) => {
           onChangeAge={searchAge}
           onChangeSalary={searchSalary}
         ></Form>
+        <SortCard buttonClick={sortEmployeeList}></SortCard>
       </div>
-      {filteredEmployeesByAge.map(employee => (
+      {filteredEmployeesByName.map(employee => (
         <Card
           key={employee.id}
           name={employee.name}

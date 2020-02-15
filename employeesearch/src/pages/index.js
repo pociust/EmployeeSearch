@@ -3,6 +3,7 @@ import Card from '../components/Card';
 import Form from '../components/Form';
 import SortCard from './../components/SortCard';
 import '../styles/style.css';
+import Header from '../components/Header';
 
 const EmployeeList = ({ initialList }) => {
   const [employees, setEmployees] = useState(initialList || []);
@@ -31,11 +32,9 @@ const EmployeeList = ({ initialList }) => {
       comparison = -1;
     }
     return comparison;
-    // filteredEmployeesByName.sort(employees.name);
   };
 
   let sortEmployeelistSalary = () => {
-    console.log('sort');
     let filterEmployeesSalary = filterEmployees.sort(sortEmployeeSalary);
     setFilterSalary(filterEmployeesSalary);
   };
@@ -50,24 +49,7 @@ const EmployeeList = ({ initialList }) => {
       comparison = -1;
     }
     return comparison;
-    // filteredEmployeesByName.sort(employees.name);
   };
-
-  // if (searchedQueryAge !== '') {
-  //   var filteredEmployeesByAge = employees.filter(
-  //     employee => employee.age >= searchedQueryAge
-  //   );
-  // } else {
-  //   filteredEmployeesByAge = employees;
-  // }
-
-  // if (searchQuerySalary !== '') {
-  //   var filteredEmployeesBySalary = employees.filter(
-  //     employee => parseFloat(employee.salary) <= parseFloat(searchQuerySalary)
-  //   );
-  // } else {
-  //   filteredEmployeesBySalary = employees;
-  // }
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -79,16 +61,9 @@ const EmployeeList = ({ initialList }) => {
     setQueryName(event.target.value);
   };
 
-  // const searchAge = event => {
-  //   setQueryAge(event.target.value);
-  // };
-
-  // const searchSalary = event => {
-  //   setQuerySalary(event.target.value);
-  // };
-
   return (
     <div>
+      <Header></Header>
       <div className="frow">
         <div className="col-md-3-10">
           {filterEmployees.map(employee => (

@@ -10,3 +10,10 @@ ul {
 /* .salary-list {
   opacity: 0;
 } */
+
+.header {
+  font-size: 40px;
+  background-color: blue;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}

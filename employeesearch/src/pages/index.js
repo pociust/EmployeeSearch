@@ -7,19 +7,31 @@ import '../styles/style.css';
 const EmployeeList = ({ initialList }) => {
   const [employees, setEmployees] = useState(initialList || []);
   const [searchedQueryName, setQueryName] = useState('');
-  const [filterEmployeesAge, setFilterAge] = useState('');
+  const [filterEmployeesAge, setFilterAge] = useState([]);
   const [filterEmployeesSalary, setFilterSalary] = useState([]);
 
-  let filterEmployees = employees.filter(
+  const filterEmployees = employees.filter(
     employee =>
       employee.name.toLowerCase().indexOf(searchedQueryName.toLowerCase()) !==
       -1
   );
 
-  let sortEmployeelistAge = () => {
+  const sortEmployeelistAge = () => {
     console.log('age');
-    let filteredEmployeesByAge = filterEmployees.sort(sortEmployeeSalary);
-    setFilterAge(filteredEmployeesByAge);
+    let filterEmployeesAge = filterEmployees.sort(sortEmployeeAge);
+    setFilterAge(filterEmployeesAge);
+  };
+  const sortEmployeeAge = (a, b) => {
+    let nameA = parseFloat(a.age);
+    let nameB = parseFloat(b.age);
+    let comparison = 0;
+    if (nameA > nameB) {
+      comparison = 1;
+    } else if (nameA < nameB) {
+      comparison = -1;
+    }
+    return comparison;
+    // filteredEmployeesByName.sort(employees.name);
   };
 
   let sortEmployeelistSalary = () => {
@@ -78,7 +90,7 @@ const EmployeeList = ({ initialList }) => {
   return (
     <div>
       <div className="frow">
-        <div className="col-md-1-3">
+        <div className="col-md-3-10">
           {filterEmployees.map(employee => (
             <Card
               className="inital-list"
@@ -89,7 +101,7 @@ const EmployeeList = ({ initialList }) => {
             />
           ))}
         </div>
-        <div className="col-md-1-3">
+        <div className="col-md-1-10">
           <Form
             onSubmit={handleSubmit}
             onChangeName={searchEmployeeName}
@@ -102,7 +114,17 @@ const EmployeeList = ({ initialList }) => {
           </button>
         </div>
 
-        <div className="col-md-1-3 salary-list">
+        <div className="col-md-3-10 salary-list">
+          {filterEmployeesAge.map(employee => (
+            <Card
+              key={employee.id}
+              name={employee.name}
+              salary={employee.salary}
+              age={employee.age}
+            />
+          ))}
+        </div>
+        <div className="col-md-3-10 salary-list">
           {filterEmployeesSalary.map(employee => (
             <Card
               key={employee.id}

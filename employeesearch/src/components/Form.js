@@ -9,7 +9,7 @@ function Form(props) {
         name="employeeName"
         onChange={props.onChangeName}
       ></input>
-      <input
+      {/* <input
         type="number"
         placeholder="Age"
         name="employeeAge"
@@ -21,7 +21,7 @@ function Form(props) {
         placeholder="Salary"
         name="employeeAge"
         onChange={props.onChangeSalary}>
-      </input>
+      </input> */}
     </form>
   );
 }

@@ -3,7 +3,7 @@ import React from 'react';
 function SortCard(props) {
   return (
     <>
-      <button onClick={props.buttonClick}></button>
+      <button onClick={props.buttonClick}>{props}</button>
     </>
   );
 }

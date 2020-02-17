@@ -24,5 +24,19 @@ ul {
 div > button {
   margin: 10px;
   border-radius: 10px;
-  padding: 15px
+  padding: 15px;
+}
+
+.age-button {
+  background-color: #00ba68;
+  border-color: #00ba68;
+}
+.salary-button {
+  background-color: #0030d6;
+  border-color: #0030d6;
+}
+
+.reset-button {
+  background-color: #ee3502;
+  border-color: #ee3502;
 }

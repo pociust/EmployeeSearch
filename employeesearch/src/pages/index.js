@@ -87,11 +87,11 @@ const EmployeeList = ({ initialList }) => {
             onChangeName={searchEmployeeName}
           ></Form>
           <div className="frow column-center pt-20">
-            <button onClick={() => sortEmployeelistAge()}>Sort by Age</button>
-            <button onClick={() => sortEmployeelistSalary()}>
+            <button className="age-button" onClick={() => sortEmployeelistAge()}>Sort by Age</button>
+            <button className="salary-button" onClick={() => sortEmployeelistSalary()}>
               Sort by Salary
             </button>
-            <button onClick={() => resetQuery('')}>Reset</button>
+            <button className="reset-button" onClick={() => resetQuery('')}>Reset</button>
           </div>
         </div>
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Card from '../components/Card';
 import Form from '../components/Form';
-import SortCard from './../components/SortCard';
 import '../styles/style.css';
 import Header from '../components/Header';
 
@@ -61,6 +60,12 @@ const EmployeeList = ({ initialList }) => {
     setQueryName(event.target.value);
   };
 
+  const resetQuery = () => {
+    setQueryName('');
+    setFilterAge([]);
+    setFilterSalary([]);
+  };
+
   return (
     <div>
       <Header></Header>
@@ -80,13 +85,12 @@ const EmployeeList = ({ initialList }) => {
           <Form
             onSubmit={handleSubmit}
             onChangeName={searchEmployeeName}
-            // onChangeAge={searchAge}
-            // onChangeSalary={searchSalary}
           ></Form>
           <button onClick={() => sortEmployeelistAge()}>Sort by Age</button>
           <button onClick={() => sortEmployeelistSalary()}>
             Sort by Salary
           </button>
+          <button onClick={() => resetQuery('')}>Reset</button>
         </div>
 
         <div className="col-md-3-10 salary-list">

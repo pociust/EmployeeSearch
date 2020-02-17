@@ -1,19 +1,18 @@
 body {
   font-family: 'Fira Sans', sans-serif;
   padding: 25px;
+  background-color: #ddf4fc;
 }
 
 ul {
   list-style-type: none;
 }
 
-/* .salary-list {
-  opacity: 0;
-} */
 
 .header {
   font-size: 40px;
-  background-color: blue;
+  color: #6f81f6;
+  background-color: #02eeab;
   padding: 20px 0;
   margin-bottom: 30px;
 }

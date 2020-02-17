@@ -86,11 +86,13 @@ const EmployeeList = ({ initialList }) => {
             onSubmit={handleSubmit}
             onChangeName={searchEmployeeName}
           ></Form>
-          <button onClick={() => sortEmployeelistAge()}>Sort by Age</button>
-          <button onClick={() => sortEmployeelistSalary()}>
-            Sort by Salary
-          </button>
-          <button onClick={() => resetQuery('')}>Reset</button>
+          <div className="frow column-center pt-20">
+            <button onClick={() => sortEmployeelistAge()}>Sort by Age</button>
+            <button onClick={() => sortEmployeelistSalary()}>
+              Sort by Salary
+            </button>
+            <button onClick={() => resetQuery('')}>Reset</button>
+          </div>
         </div>
 
         <div className="col-md-3-10 salary-list">
